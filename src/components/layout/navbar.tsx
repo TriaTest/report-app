@@ -51,7 +51,7 @@ interface Navbar1Props {
 export const Navbar = ({
   logo = {
     url: "/",
-    src: "/RTR-LOGO-04.png",
+    src: "/app-logo.webp",
     alt: "Report App of ISTAD",
     title: "ISTAD",
   },
@@ -140,9 +140,9 @@ export const Navbar = ({
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href={logo.url} className="flex items-center gap-2">
+            <a href={logo.url} className="flex items-center gap-2">
               <img src={logo.src} className="max-h-8" alt={logo.alt} />
-            </Link>
+            </a>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -152,9 +152,9 @@ export const Navbar = ({
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <Link href={logo.url} className="flex items-center gap-2">
+                    <a href={logo.url} className="flex items-center gap-2">
                       <img src={logo.src} className="max-h-8" alt={logo.alt} />
-                    </Link>
+                    </a>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-6 p-4">
@@ -226,15 +226,15 @@ const renderMobileMenuItem = (item: MenuItem) => {
   }
 
   return (
-    <Link key={item.title} href={item.url} className="text-md font-semibold">
+    <a key={item.title} href={item.url} className="text-md font-semibold">
       {item.title}
-    </Link>
+    </a>
   );
 };
 
 const SubMenuLink = ({ item }: { item: MenuItem }) => {
   return (
-    <Link
+    <a
       className="flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
       href={item.url}
     >
@@ -247,6 +247,6 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
           </p>
         )}
       </div>
-    </Link>
+    </a>
   );
 };
